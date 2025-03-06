@@ -1,43 +1,47 @@
 package Herencia.Ej8;
 
 public class Automovil implements Transporte {
-    private final int aceleracion; // m/1s
+    private final int id;
     private int velocidad; // m/s
     private int distancia;
+    private final double chance_de_error;
 
-    public Automovil(int metrosPorSegundo) {
-        this.aceleracion = metrosPorSegundo;
-        this.velocidad = 0;
+    public Automovil(int id) {
+        this.id = id;
+        this.velocidad = 10;
         this.distancia = 0;
+        this.chance_de_error = 0.01; // Posibilidad de error
     }
 
-    public void addDistancia() {
-        // Realizar cada segundo
-        this.distancia += this.velocidad;
+    // Gets
+    public int getId() {
+        return id;
     }
 
     public int getVelocidad() {
-        return this.velocidad;
+        return velocidad;
     }
 
     public int getDistancia() {
-        return this.distancia;
+        return distancia;
     }
 
+    // Metodos de interfaz Transporte
     @Override
     public boolean error() {
-        return Math.random() > 0.5;
+        return Math.random() >= chance_de_error;
     }
 
     @Override
-    public int acelerar(int segundos) {
-        this.velocidad += this.aceleracion * segundos;
-        return this.velocidad;
+    public void avanzar() {
+        if (!error()) {
+            frenar();
+        }
+        distancia += velocidad;
     }
 
     @Override
-    public int frenar(int segundos) {
-        this.velocidad -= this.aceleracion * segundos;
-        return this.velocidad;
+    public void frenar() {
+        velocidad = 0;
     }
 }
