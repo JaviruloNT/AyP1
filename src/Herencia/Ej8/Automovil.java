@@ -1,13 +1,15 @@
 package Herencia.Ej8;
 
 public class Automovil implements Transporte {
+    private static int autos = 0;
     private final int id;
     private int velocidad; // m/s
     private int distancia;
     private final double chance_de_error;
 
-    public Automovil(int id) {
-        this.id = id;
+    public Automovil() {
+        this.id = autos + 1;
+        autos++;
         this.velocidad = 10;
         this.distancia = 0;
         this.chance_de_error = 0.01; // Posibilidad de error

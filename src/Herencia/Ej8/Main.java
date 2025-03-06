@@ -7,16 +7,17 @@ public class Main {
     public static void main(String[] args) {
         List<Automovil> lista = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            lista.add(new Automovil(i + 1));
+            lista.add(new Automovil());
         }
-        int t = 0;
+        final int LIMITE_TIEMPO = 60;
+        int tiempo = 0;
         for (Automovil auto : lista) {
-            while (t <= 120 && auto.getVelocidad() != 0) {
+            while (tiempo <= LIMITE_TIEMPO && auto.getVelocidad() != 0) {
                 auto.avanzar();
-                t++;
+                tiempo++;
             }
             //
-            t = 1;
+            tiempo = 0;
         }
         for (Automovil auto : lista) {
             if (auto.getVelocidad() == 0) {
