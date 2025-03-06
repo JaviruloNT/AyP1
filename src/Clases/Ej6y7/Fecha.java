@@ -1,8 +1,8 @@
-package Clases.Ej6a7;
+package Clases.Ej6y7;
 
 class Fecha {
 
-    private static int[] MAX_DIAS = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    private final int[] MAX_DIAS = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     private int dia;
     private int mes;

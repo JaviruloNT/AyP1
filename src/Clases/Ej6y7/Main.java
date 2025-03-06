@@ -1,4 +1,4 @@
-package Clases.Ej6a7;
+package Clases.Ej6y7;
 
 class Main {
     public static void main(String[] args) {
