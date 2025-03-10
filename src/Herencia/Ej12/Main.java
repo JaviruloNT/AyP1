@@ -2,8 +2,8 @@ package Herencia.Ej12;
 
 public class Main {
     public static void main(String[] args) {
-        Persona p1 = new Persona("Javier", new Tarjeta());
-        Persona p2 = new Persona("Luis", new Tarjeta());
+        Persona p1 = new Persona(new Tarjeta());
+        Persona p2 = new Persona(new Tarjeta());
         //
         System.out.println(p1.pagar(p2, 50));
         p1.getBilletera().ingresar(5000);

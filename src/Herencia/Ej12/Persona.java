@@ -1,11 +1,9 @@
 package Herencia.Ej12;
 
 public class Persona {
-    private String nombre;
     private MetodoPago billetera;
 
-    public Persona(String nombre, MetodoPago metodo) {
-        this.nombre = nombre;
+    public Persona(MetodoPago metodo) {
         billetera = metodo;
     }
 
