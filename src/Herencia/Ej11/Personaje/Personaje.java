@@ -20,8 +20,4 @@ public class Personaje {
         }
         System.out.println(recursos.get(idRecurso));
     }
-
-    public void get(int idRecurso, int cant) {
-
-    }
 }
